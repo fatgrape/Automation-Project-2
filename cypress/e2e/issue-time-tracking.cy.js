@@ -16,11 +16,12 @@ describe('Issue time tracking', () => {
         cy.get('input[placeholder="Number"]').clear().type(20);
         cy.get('[data-testid="icon:stopwatch"]').click();
         getTimeSpent().clear().type(2)
-        getTimeRemaining().clear().type(5)
+        getTimeRemaining().type(5)
+        cy.wait(1000);
         cy.contains('button','Done').click()
         cy.get('[data-testid="icon:close"]').eq(0).click()
 
-        //Checking
+        //Checking the adding
         cy.contains('This is an issue of type: Task.').click()
         cy.get('input[placeholder="Number"]').should('have.value','20')
         cy.get('[data-testid="icon:stopwatch"]').click();
@@ -33,10 +34,11 @@ describe('Issue time tracking', () => {
         cy.get('[data-testid="icon:stopwatch"]').click();
         getTimeSpent().clear()
         getTimeRemaining().clear()
+        cy.wait(1000);
         cy.contains('button','Done').click()
         cy.get('[data-testid="icon:close"]').eq(0).click()
 
-        //Checking
+        //Checking the deletion 
         cy.contains('This is an issue of type: Task.').click()
         cy.get('input[placeholder="Number"]').should('have.value','')
         cy.get('[data-testid="icon:stopwatch"]').click();
