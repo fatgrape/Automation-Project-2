@@ -8,7 +8,7 @@ describe('Issue time tracking', () => {
     });
 
     const getTimeSpent = ()  => cy.get('[data-testid="modal:tracking"]').find('div').first().children().eq(2).children().first().children().eq(1).children().first();
-    const getTimeRemaining = ()  => cy.get('[data-testid="modal:tracking"]').find('div').first().children().eq(2).children().eq(1).children().eq(1).children().first()
+    const getTimeRemaining = ()  => cy.get('[data-testid="modal:tracking"]').find('div').first().children().eq(2).children().eq(1).children().eq(1).children().first();
     
 
     it.only('Should add estimation to issue', () => {
